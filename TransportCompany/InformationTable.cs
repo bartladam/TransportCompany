@@ -8,5 +8,9 @@ namespace TransportCompany
 {
     internal class InformationTable
     {
+        public float TimeToArrive(float vehiclePosition, float positionStation)
+        {
+            return vehiclePosition - positionStation;
+        }
     }
 }
