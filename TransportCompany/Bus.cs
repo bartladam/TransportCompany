@@ -15,9 +15,14 @@ namespace TransportCompany
         {
             this.bus = bus;
         }
-        public override string GetInformation()
+        public override void GoVehicle()
         {
-            return designationVehicle.ToString() + placeVehicle.ToString();
+            placeVehicle += 10;
         }
+        public override float GetInformation()
+        {
+            return placeVehicle;
+        }
+
     }
 }

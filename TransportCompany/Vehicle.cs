@@ -9,13 +9,14 @@ namespace TransportCompany
     abstract class Vehicle
     {
         protected int designationVehicle { get; private set; }
-        protected int placeVehicle { get; private set; }
+        protected float placeVehicle { get; set; }
         public int speedVehicle { get; private set; }
-        public Vehicle(int designationVehicle, int speedvehicle)
+        public Vehicle(int designationVehicle, int speedVehicle)
         {
             this.designationVehicle = designationVehicle;
             this.speedVehicle = speedVehicle;
         }
-        public abstract string GetInformation();
+        public abstract void GoVehicle();
+        public abstract float GetInformation();
     }
 }
