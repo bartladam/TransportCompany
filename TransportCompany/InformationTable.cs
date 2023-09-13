@@ -8,9 +8,9 @@ namespace TransportCompany
 {
     internal class InformationTable
     {
-        public float TimeToArrive(float vehiclePosition, float positionStation)
+        public double TimeToArrive(float vehiclePosition, float positionStation, int speedVehicle)
         {
-            return vehiclePosition - positionStation;
+            return Math.Round((double)((positionStation - vehiclePosition) / speedVehicle)*60);
         }
     }
 }

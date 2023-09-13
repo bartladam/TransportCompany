@@ -11,13 +11,13 @@ namespace TransportCompany
         public enum lengthBus { shortBus, middleBus, longBus};
         public lengthBus bus { get; private set; }
     
-        public Bus(int designationVehicle, lengthBus bus, int speedVehicle):base(designationVehicle, speedVehicle)
+        public Bus(string transportVehicle, int designationVehicle, lengthBus bus, int speedVehicle):base(transportVehicle,designationVehicle, speedVehicle)
         {
             this.bus = bus;
         }
-        public override void GoVehicle()
+        public override void GoVehicle(float distance)
         {
-            placeVehicle += 10;
+            placeVehicle += distance;
         }
         public override float GetInformation()
         {

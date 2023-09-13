@@ -13,16 +13,20 @@ namespace TransportCompany
         /// <summary>
         /// Position by start route
         /// </summary>
-        public int positionStation { get; private set; }
-        public Station(string nameStation,int positionStation, InformationTable table)
+        public float positionStation { get; private set; }
+        public Station(string nameStation,float positionStation, InformationTable table)
         {
             this.nameStation = nameStation;
             this.positionStation = positionStation;
             this.table = table;
         }
-        public float TimeToArrive(Vehicle vehicle)
+        public double TimeToArrive(Vehicle vehicle)
         {
-            return table.TimeToArrive(vehicle.GetInformation(),positionStation);
+            return table.TimeToArrive(vehicle.GetInformation(),positionStation, vehicle.speedVehicle);
+        }
+        public override string ToString()
+        {
+            return nameStation;
         }
 
     }

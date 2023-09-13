@@ -10,13 +10,13 @@ namespace TransportCompany
     {
         public enum tramVagons {one, two};
         public tramVagons vagons { get; private set; }
-        public Tram(int designationVehicle, int speedVehicle, tramVagons vagons) : base(designationVehicle, speedVehicle)
+        public Tram(string transportVehicle, int designationVehicle, int speedVehicle, tramVagons vagons) : base(transportVehicle,designationVehicle, speedVehicle)
         {
             this.vagons = vagons;
         }
-        public override void GoVehicle()
+        public override void GoVehicle(float distance)
         {
-            placeVehicle += 10;
+            placeVehicle += distance;
         }
         public override float GetInformation()
         {
